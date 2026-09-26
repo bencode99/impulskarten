@@ -1,0 +1,72 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>T3 · Fehlmenge · v9</title><style>
+:root{--ink:#20313A;--grau:#53636D}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+     background:#FFFEFA;color:var(--ink);line-height:1.5;font-size:18px}
+main{max-width:640px;margin:0 auto;padding:22px 18px 40px}
+.kopf{font-size:14px;font-weight:700;color:var(--f);letter-spacing:.02em}
+h1{font-size:25px;line-height:1.2;margin:4px 0 18px}
+.nr{display:inline-block;background:var(--f);color:#fff;border-radius:10px;
+    padding:2px 11px;margin-right:8px;font-size:18px;vertical-align:2px}
+.r{position:absolute;opacity:0;pointer-events:none}
+.wahl{display:flex;gap:10px;margin:0 0 16px}
+.wahl label{flex:1;text-align:center;padding:12px 8px;border-radius:12px;border:2px solid var(--f);
+     color:var(--f);font-weight:700;cursor:pointer;background:#fff;font-size:17px}
+.frage{color:var(--grau);font-size:15px;margin:0 0 10px}
+.stufe{display:none}
+.rs:checked ~ .wahl .ls,.rp:checked ~ .wahl .lp{background:var(--f);color:#fff}
+.rs:checked ~ .st,.rp:checked ~ .pr{display:block}
+.rs:checked ~ .frage,.rp:checked ~ .frage{display:none}
+.gemeinsam{font-size:14px;color:var(--grau);margin:-6px 0 14px}
+.block{display:inline-block;font-size:13px;font-weight:700;color:var(--f);background:var(--p);
+     border:1px solid var(--l);border-radius:8px;padding:2px 9px;margin-bottom:10px}
+.karte{background:var(--p);border:1px solid var(--l);border-radius:14px;padding:16px 18px;margin:0 0 14px}
+.titel{font-size:13px;font-weight:700;color:var(--f);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+details{background:#fff;border:1px solid var(--l);border-radius:14px;padding:0}
+summary{cursor:pointer;list-style:none;padding:14px 18px;font-weight:700;display:flex;
+     align-items:center;justify-content:space-between;gap:10px}
+summary::-webkit-details-marker{display:none}
+.pill{background:var(--f);color:#fff;border-radius:999px;padding:4px 14px;font-size:15px;white-space:nowrap}
+details[open] summary{border-bottom:1px solid var(--l)}
+.hilfe{padding:14px 18px 16px}
+.hilfe p{margin:0 0 10px}
+pre{margin:6px 0 0;background:#F7F8FA;border:1px solid #E1E6EA;border-radius:10px;padding:12px 12px;
+    white-space:pre-wrap;word-break:normal;overflow-wrap:normal;font-size:13.5px;line-height:1.5}
+.z{display:block;padding-left:4ch;text-indent:-4ch}
+@media (max-width:420px){main{padding:18px 12px 34px}.hilfe{padding:12px 12px 14px}pre{padding:10px 8px}}
+code{font-family:SFMono-Regular,Menlo,Consolas,monospace}
+.fuss{margin-top:26px;font-size:13px;color:var(--grau)}
+.luecke{display:inline-block;text-indent:0;height:1.25em;vertical-align:-.3em;background:#FFF1C9;
+     border-bottom:2px solid #D9A400;border-radius:3px}
+.kommentar{color:#7A8791;font-style:italic}
+.nb{white-space:nowrap}
+.luecken-titel{margin:14px 0 4px}
+.lehrkraft{margin:14px 0 0;font-size:15.5px;font-weight:600;color:var(--f)}
+.karte-link{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:16px 0 0;
+     padding:13px 16px;border-radius:14px;border:1px solid var(--l);background:#fff;color:var(--ink);
+     text-decoration:none;font-size:16px}
+.kontrolle-link{background:var(--p)}
+.pfeil{color:var(--f);font-weight:700;font-size:20px}
+.einleitung{background:var(--p);border:1px solid var(--l);border-radius:14px;padding:14px 16px;margin:0 0 16px;font-size:16.5px}
+.gblock{margin:0 0 18px}
+.gtitel{display:inline-block;font-size:13px;font-weight:700;color:var(--f);background:var(--p);
+     border:1px solid var(--l);border-radius:8px;padding:2px 9px;margin-bottom:6px}
+.gsatz{margin:0 0 8px;font-size:16px}
+.gscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--l);border-radius:10px;background:#fff}
+.gtab{border-collapse:collapse;font-size:12.5px;min-width:100%}
+.gtab th{background:var(--f);color:#fff;text-align:left;padding:7px 9px;white-space:nowrap;font-weight:700}
+.gtab td{border-top:1px solid #E6EAED;padding:7px 9px;white-space:nowrap}
+.gtab td.fest{background:#EEF1F3;font-family:SFMono-Regular,Menlo,Consolas,monospace;font-size:12px}
+.verdeckt{display:inline-block;width:44px;height:10px;border-radius:5px;background:#D5DBE0;vertical-align:middle}
+.nachsatz{font-size:15.5px;color:var(--ink);margin:8px 2px 0;font-weight:600}
+.breit .gtab th,.breit .gtab td{padding:6px 7px}
+.breit .verdeckt{width:30px}
+.gscroll.breit{background:linear-gradient(to left,rgba(32,49,58,.10),rgba(255,255,255,0) 22px) right/22px 100% no-repeat,#fff}
+.wischen{font-size:14px;color:var(--grau);margin:6px 2px 0}
+
+.orange{color:#af6200}pre{overflow-wrap:anywhere;font-size:15px}.version{font-weight:700;color:var(--f)}</style></head><body><main><div style="--f:#247E76;--p:#EAF5F1;--l:#B9DCD4"><div class="kopf">Teilauftrag 3 · Ersatzversorgung planen · v9</div><h1>Fehlmenge</h1><input class="r rs" type="radio" name="n" id="starter" value="starter" checked><input class="r rp" type="radio" name="n" id="profi" value="profi"><div class="wahl"><label class="ls" for="starter">STARTER</label><label class="lp" for="profi">PROFI</label></div><section class="stufe st"><p>Lesen Sie den geprüften Lagerbestand auf dem Blatt. Addieren Sie die Mengen <b>von Hand</b>. Rechnen Sie danach <b>von Hand</b>: 27 minus verfügbarer Bestand. Das Ergebnis ist die <strong class="orange">Fehlmenge</strong>.</p></section><section class="stufe pr"><div class="block">Aufgabe 02 · Block 1</div><div class="karte"><b>Denkimpuls</b><p>Das Modell ist schon gefiltert. Ergänzen Sie Status und schließen Sie beide ungeeigneten Lagerorte aus.</p></div><details><summary>Weitere Hilfe öffnen</summary><p>Ungleich schreibt man <>. Verbinden Sie beide Ausschlüsse mit AND. Addieren Sie die zwei verbleibenden Mengen von Hand; berechnen Sie danach die Fehlmenge von Hand.</p><pre><code>SELECT *
+FROM Lagerbestand
+WHERE Modell = &#x27;NX-65R&#x27;
+  AND Status = &#x27;frei&#x27;
+  AND Lagerort &lt;&gt; &#x27;Aussenlager&#x27;
+  AND Lagerort &lt;&gt; &#x27;Filiallager&#x27;</code></pre><p>Wenn Sie nicht weiterkommen, fragen Sie die Lehrkraft.</p></details></section><p class="fuss">JIKU · Rückruf R2609 · Version v9</p></div></main><script>function pick(){let n=location.hash.slice(1);if(n!=='profi')n='starter';document.getElementById(n).checked=true;}pick();addEventListener('hashchange',pick);document.querySelectorAll('input[name=n]').forEach(e=>e.addEventListener('change',()=>location.hash=e.id));</script></body></html>
